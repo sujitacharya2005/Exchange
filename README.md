@@ -29,8 +29,14 @@ MVVM provides a clear separation of concern and has great support in Android SDK
   * **NDK** for writing native code
   * **GOOGLETEST_ROOT** libary for cpp unit test
 
+# Api CoinDeco apis used
+1. To get id, symbol, name and Image
+https://api.coingecko.com/api/v3/coins/markets
+2. To get usd price and btc price
+https://api.coingecko.com/api/v3/simple/price
+
 # Adb Command to unittest cpp
-1. After build code go to app/build/intermediates/cmake/debug/obj/arm64-v8a/**
+1. After build code go to app/build/intermediates/cmake/debug/obj/arm64-v8a/
 2. adb shell push * /data/local/tmp/
 3. adb shell chmod 775 /data/local/tmp/exchange_unitTest
 4. adb shell "LD_LIBRARY_PATH=/data/local/tmp /data/local/tmp/exchange_unitTest"
