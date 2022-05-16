@@ -41,6 +41,9 @@ https://api.coingecko.com/api/v3/simple/price
 3. adb shell chmod 775 /data/local/tmp/exchange_unitTest
 4. adb shell "LD_LIBRARY_PATH=/data/local/tmp /data/local/tmp/exchange_unitTest"
 
+# Runtime Permissions used
+**Storage** permission is used to save log file in native
+
 ## TODO ##
 private const val COINS_IDS = "bitcoin,binancecoin,ethereum,basic-attention-token". <br />
 private const val CURRENCIES = "usd,btc". 
