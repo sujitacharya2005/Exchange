@@ -29,7 +29,7 @@ MVVM provides a clear separation of concern and has great support in Android SDK
   * **NDK** for writing native code
   * **GOOGLETEST_ROOT** libary for cpp unit test
 
-# Api CoinDeco apis used
+# CoinDeco apis used
 1. To get id, symbol, name and Image
 https://api.coingecko.com/api/v3/coins/markets
 2. To get usd price and btc price
