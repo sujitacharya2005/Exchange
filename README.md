@@ -49,7 +49,7 @@ private const val COINS_IDS = "bitcoin,binancecoin,ethereum,basic-attention-toke
 private const val CURRENCIES = "usd,btc". 
 
 1. Currenlty these are hard coded later it's can improve fetch all coins and currencies from api
-2. Improve code by using Hilt or dagger dependency
+2. Improve code by using Hilt or dagger dependency injection libary
 3. Convert UI code from xml format to Jetpack compose
 
 
