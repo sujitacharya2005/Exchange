@@ -1,18 +1,18 @@
 package com.android.exchange.repository
 
 import android.content.Context
-import android.os.Environment
 import com.android.exchange.api.CoinExchangeRateService
 import com.android.exchange.db.CryptoDatabase
 import com.android.exchange.model.CryptoData
 import com.android.exchange.util.availableInternet
+import com.android.exchange.util.getLogsDir
 
-const val FILE_NAME = "crypto_log.txt"
 
 class CoinExchangeRateRepositoryImpl(
     private val coinExchangeRateService: CoinExchangeRateService,
     private val database: CryptoDatabase,
     private val applicationContext: Context,
+    private val nativeBase: NativeBase
 ) : CoinExchangeRateRepository {
 
     override suspend fun getRates() : List<CryptoData> {
@@ -24,26 +24,11 @@ class CoinExchangeRateRepositoryImpl(
         val time = System.currentTimeMillis()
         val path = getLogsDir(applicationContext)
         for(item in data) {
-            saveLogJNI(path, time, item.symbol, item.usdPrice)
+            nativeBase.saveLog(path, time, item.symbol, item.usdPrice)
         }
         return data
     }
-    private fun getLogsDir(context: Context): String {
-        val state = Environment.getExternalStorageState()
-        val storageDir = if (Environment.MEDIA_MOUNTED == state) {
-            //SD card (or partition) available
-            println("someTag Hello")
 
-            context.getExternalFilesDir(null)
-        } else {
-            //Try internal storage
-            println("someTag hi")
-
-            context.filesDir
-        }
-
-        return storageDir?.absolutePath + FILE_NAME
-    }
 
     override suspend fun getLocal() : List<CryptoData> {
         return getLocalData()
@@ -76,6 +61,4 @@ class CoinExchangeRateRepositoryImpl(
     private suspend fun getLocalData() : List<CryptoData> {
         return database.cryptoDao().getData()
     }
-
-    external fun saveLogJNI(path:String, time:Long, symbol: String, usdPrice: Double )
 }

@@ -12,14 +12,9 @@ using namespace std;
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_android_exchange_repository_CoinExchangeRateRepositoryImpl_saveLogJNI(JNIEnv *env,
-                                       jobject thiz,
-                                       jstring path,
-                                       jlong time,
-                                       jstring symbol,
-                                       jdouble usd_price)
-
-{
+Java_com_android_exchange_repository_NativeClassImpl_saveLogJNI(JNIEnv *env, jobject thiz,
+                                                                jstring path, jlong time,
+                                                                jstring symbol, jdouble usd_price) {
     const char *coinSymbol = env->GetStringUTFChars(symbol, 0);
     const char *pathValue = env->GetStringUTFChars(path, 0);
     Exchange::ExchangeLog exchangeLog;
