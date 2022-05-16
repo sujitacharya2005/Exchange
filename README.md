@@ -36,8 +36,8 @@ MVVM provides a clear separation of concern and has great support in Android SDK
 4. adb shell "LD_LIBRARY_PATH=/data/local/tmp /data/local/tmp/exchange_unitTest"
 
 ## TODO ##
-*. private const val COINS_IDS = "bitcoin,binancecoin,ethereum,basic-attention-token"
-*. private const val CURRENCIES = "usd,btc"
+private const val COINS_IDS = "bitcoin,binancecoin,ethereum,basic-attention-token". <br />
+private const val CURRENCIES = "usd,btc". 
 
 1. Currenlty these are hard coded later it's can improve fetch all coins and currencies from api
 2. Improve code by using Hilt or dagger dependency
