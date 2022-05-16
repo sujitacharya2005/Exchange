@@ -2,8 +2,7 @@
 
 # Screenshots:
 
-![image](https://user-images.githubusercontent.com/32419898/168638719-033aa4b4-a3b5-4c7f-b3f7-71bef9275bca.png). 
-![image](https://user-images.githubusercontent.com/32419898/168638907-b8a9df30-e75d-4b43-8f13-1dd88272c0f0.png)
+<img src="https://user-images.githubusercontent.com/32419898/168645289-ac4f1119-943e-4737-a153-867624b50ff9.png" width="200" height="400">
 
 # Project Structure :
 
