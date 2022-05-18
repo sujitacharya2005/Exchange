@@ -12,7 +12,7 @@
 4. **app/src/test**           : Contains kotlin unit test files
 
 # Architecture :
-MVVM (Model - ViewModel - View) is the design pattern used for making this app. 
+MVVM (Model - View - ViewModel) is the design pattern used for making this app. 
 MVVM provides a clear separation of concern and has great support in Android SDK in the form of Architecture Components.
 
 # Libraries Used
